@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width,initial_scale=1.0">
+        <title>document</title> 
+        <script>
+            function check(){
+                var firstName=document.getElementById("firstname").value
+                var firstNameCheck=/^[a-zA-Z]+$/
+                console.log(firstName)
+                if(firstName==""||firstName.length<3){
+                    alert("plz enter ur name:")
+                    return false
+                }
+                if(!firstName.match(firstNameCheck)){
+                    alert("name must carry characters")
+                    return false
+                }               // return true
+                var email=document.getElementById("email").value
+                var emailCheck=/^[a-z0-9.]+@[a-z0-9]\.[a-z]{2,3}$/
+                console.log(email)
+                if(email==""){
+                    alert("enter email")
+                    return false
+                }
+                if(!email.match(emailCheck)){
+                alert("provide proper email")
+                return false
+            }
+            return true
+        }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="return check()">
+            <input id="firstname" placeholder="enter firstname"/>
+            <input id="email" placeholder="enter email"/>
+            <button>submit</button>
+        </form>
+    </body>
+</html>
+
+
+
+    <!-- name email  password    confirm password gender(radio) state(dropdown) -->
